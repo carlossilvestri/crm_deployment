@@ -33,15 +33,14 @@ const corsOption = {
         }
     }
 }
+//Carpeta publica
+app.use(express.static('uploads'));
 
 //Habilitar cors
 app.use(cors(corsOption));
 
 //Rutas de la app.
 app.use('/', routes());
-
-//Carpeta publica
-app.use(express.static('uploads'));
 
 const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 5000;
